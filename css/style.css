@@ -1,0 +1,784 @@
+*{
+    margin: 0;
+    padding:0;
+    text-decoration: none;
+    line-height: 1.2;     
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+img{
+    display: block;
+    max-width: 100%;
+}
+#logo{
+    width: 110px;
+    display: inline-block;
+}
+
+#globo{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    
+}
+#vamosLa{    
+    margin-top: 5px;
+    display: grid;
+    background-color: #e30813;
+    padding: 23px 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    min-height: 20px;
+}
+
+#vamosLa:hover{
+    cursor: pointer;
+}
+
+#gradiente{
+    z-index: -1;
+    background-color: rgba(0,0,0,.4);
+    background-image: linear-gradient(
+        to top,rgba(0,0,0,.8) 0,
+        rgba(0,0,0,0) 40%,
+        rgba(0,0,0,0) 75%,
+        rgba(0,0,0,.8) 100%
+        );
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#Ir{
+    align-items: center;
+    text-align: center;
+    font-size: 1em;
+    background-color: #e50914;;
+    position: absolute;
+    top: 100px;
+    right: 25px;;
+    width: 50px;
+    height: 50px;
+    border-radius: 80%;
+    border: 4px solid white;
+    color:white ;
+    font-family: "PT Mono", monospace;
+    cursor: pointer;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
+}
+
+
+
+select{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-weight: normal;
+    font-size: 1rem;
+    position: relative;
+    top: -2px;
+}
+
+.mid{  
+    background: url("../img/fundo.jpg") 0 0 no-repeat ;
+    background-size: cover;
+    background-position: center;  
+    padding: 25px 0;
+    height: 100vh;    
+    z-index: 1;
+    position: relative;
+}
+
+.mid::before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    content: '' ;
+    background: rgba(0,0,0,.6);
+    z-index: -1;
+}
+
+.mid-container{
+    /*max-width: 92%;*/
+    max-width: 92%;
+    margin-left: auto;
+    margin-right: auto; 
+    height: 75%;
+    align-items: center;   
+}
+
+.container{
+    max-width: 1130px;
+    margin: 0 auto;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1.1fr 1.1fr;
+    align-items: center;
+}
+
+.section{
+    background: black;
+    padding: 1rem 0;
+    border-top: 8px solid #222;
+    border-bottom: 8px solid #222;
+}
+.section h1{
+    /*font-size: 50px;*/
+    font-size: 3vw;
+    margin-bottom: 16px;
+    color: #fff;
+    font-family: sans-serif;
+}
+.section p{
+   /* font-size: 26px;*/
+    font-size: 1.4vw;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.img-tv{
+    position: relative;
+
+}
+.img-tv img{    
+    position: relative;
+    z-index: 1;
+}
+
+.video-tv{
+    width: 400px;
+    position: absolute;
+    top: 80px;
+    left: 70px;
+}
+
+/************* Botoes **************/
+
+
+.botao-lingua{      
+    display: flex;    
+    border: 1px solid #aaa;
+    padding: 7px 5px;    
+    margin-right: 30px;      
+    float: right;
+    border-radius: 3px;
+    align-items: center;
+    clear: left;  
+}
+.botao-lingua:hover{
+    cursor: pointer;
+}
+.botao-entrar{ 
+    display: flex;   
+    padding:  8px 10px;
+    font-size: 18px;
+    color: #fff;
+    background: #e50914;
+    float: right;    
+    border-radius: 1px;
+}
+
+/************* MID **************/
+
+.mid-cont{
+   /* padding: 30px 150px;*/
+    clear: both;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100% ;
+    align-items: center;
+    text-align: center;
+    /*margin-left: 155px;   */ 
+}
+.title-main{ 
+    font-size: 3vw;
+    /*font-size: 64px;*/
+    display: grid;
+    justify-items: center;
+    align-items: center; 
+         
+}
+
+
+.mid-cont-interno h2{
+    display: grid;
+    /*font-size: 1.5rem;*/
+    font-size: 1.1vw;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;    
+    font-weight: 400;
+    justify-items: center;
+    
+}
+
+.mid-cont-interno p{    
+    display: grid;
+    /*font-size: 1.1rem;*/
+    font-size: 1vw;
+    font-weight: normal;
+    justify-items: center;   
+}
+
+/************* Assinatura **************/
+
+.assinatura{
+    display: grid;       
+    margin-bottom: 10px;
+    margin-top: 30px;    
+}
+.assinatura:after{
+    clear: both;
+    display: table;
+    content: '';
+}
+
+.assinatura input{
+    height: 70px;    
+    border: 0;
+}
+
+.assinatura input[type = "email"]{
+    padding: 20px 10px;
+    font-size: 18px;
+    font-family: sans-serif;
+    width: 65%;    
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    float: left;
+}
+
+
+/**************** Modal *****************/
+
+
+
+
+.modal-container{
+    clear: both;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    display: none;
+}
+
+.modal{
+    display: flex;
+    background: #221d1e;
+    width: 60%;
+    min-height: 300px;    
+    margin: 0px auto;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid #474746;
+    position: relative;
+    color: seashell;   
+
+}
+
+.modal h1{ 
+    
+    font-size: 1vw;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.modal h1:after{
+    content: ' ';
+    display: flex;
+    width: 100%;
+    height: 2px;
+    margin-top: 10px;
+    
+  }
+
+.modal h2{
+    text-align: center;
+    font-size: 1vw;
+}
+
+.sel-modal p{
+    font-size: 1.5vw;
+    text-align: center;
+    
+
+}
+
+.text{
+    display: flex;
+    text-align: center;
+    width: 100%;
+}
+
+.sel-modal{
+    width: 100%;
+    
+}
+
+
+
+/**Modal cadastro*/
+
+.modal2-container{
+    clear: both;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    display: none;
+}
+
+.modal2{
+    display: flex;
+    background: #221d1e;
+    width: 60%;
+    min-height: 500px;    
+    margin: 0px auto;
+    min-width: 500px;
+    padding: 40px;
+    border: 10px solid #474746;
+    position: relative;
+    color: seashell;      
+}
+
+
+/**Modal login*/
+
+.modal3-container{
+    clear: both;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    display: none;
+}
+
+.modal3{
+    display: flex;
+    background: #221d1e;
+    width: 60%;    
+    min-height: 500px;    
+    margin: 0px auto;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid #474746;
+    position: relative;
+    color: seashell;   
+}
+/**Modal busca*/
+
+.modal4-container{
+    clear: both;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    display: none;
+}
+
+.modal4{
+    display: flex;
+    background: #221d1e;
+    width: 60%;    
+    min-height: 500px;    
+    margin: 0px auto;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid #474746;
+    position: relative;
+    color: seashell;   
+}
+
+
+
+
+
+
+@keyframes modal {
+    from{
+        opacity: 0;
+        transform: translate3d(0,-60px,0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+
+    }
+}
+.mostrar .modal {
+    animation: modal .3s;
+
+}
+
+.modal-container.mostrar{
+    display: flex;
+
+}
+
+.mostrar2 .modal2 {
+    animation: modal .3s;
+    clear: both;
+
+}
+
+.modal2-container.mostrar2{
+    display: flex;   
+
+}
+
+.mostrar3 .modal3 {
+    animation: modal .3s;
+    clear: both;
+
+}
+
+.modal3-container.mostrar3{
+    display: flex;   
+
+}
+
+.mostrar4 .modal4 {
+    animation: modal .3s;
+    clear: both;
+
+}
+
+.modal4-container.mostrar4{
+    display: flex;   
+
+}
+
+
+
+
+
+/*Botoes Modal */
+.texto-modal{
+    top:-50px;
+    
+    right: -22px;;
+    width: 100%;
+    padding: 30px;
+    
+    position: static;
+    display: flex;
+    
+}
+
+.botao-modal{    
+    padding: 20px;
+    width: 100%;      
+    display: flex;
+}
+
+.fechar{    
+    align-items: center;
+    font-size: 1.5em;
+    background-color: #e50914;;
+    position: absolute;
+    top: -25px;
+    right: -22px;;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 4px solid white;
+    color:white ;
+    font-family: "PT Mono", monospace;
+    cursor: pointer;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
+    z-index: 2005;
+}
+
+.cadastro{  
+    font-size: 1.8vw;    
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    background-color: #e50914;;    
+    cursor: pointer;   
+    color:rgb(255, 255, 255);
+    border: 3px solid rgb(75, 2, 2);
+    box-shadow: rgba(0,0,0,.8);
+    position: relative;
+
+}    
+
+
+.login{
+    font-size: 1.8vw;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    background-color: #e50914;;    
+    cursor: pointer;
+    color:rgb(255, 255, 255);
+    border: 3px solid rgb(75, 2, 2);
+    box-shadow: rgba(0,0,0,.8);
+    position: relative;
+}
+
+.busca{
+    font-size: 1.8vw;   
+    width: 100%;
+    height: 80px;
+    padding: 10px;  
+    background-color: #e50914;;      
+    cursor: pointer;
+    
+    color:rgb(255, 255, 255);
+    border: 3px solid rgb(75, 2, 2);
+    box-shadow: rgba(0,0,0,.8);
+    position: relative;
+}
+
+
+
+
+/************* Login **************/
+
+/* placeholder */
+   
+ 
+.AsContent{
+    width: 500px;
+    min-height: 560px;    
+    margin: 0px auto;
+    position: relative;
+    clear: both;   
+  }
+  .modal h1{
+    font-size: 48px;
+    color: #e50914;
+    padding: 2px 0 10px 0;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .modal h1:after{
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 10px;
+    background: -webkit-linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
+    background: linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
+  }
+  
+
+   
+  .content p:first-child{
+    margin: 0px;
+  }
+  
+   /*Escrita formulario*/
+  label{
+    color: #e50914;
+    position: relative;
+  }
+
+   
+  
+input {
+    outline: none;
+  }
+   
+  /* Apenas Input */
+  input:not([type="checkbox"]){
+    width: 95%;
+    margin-top: 4px;
+    padding: 10px;    
+    border: 1px solid #0b130b;   
+    -webkit-border-radius: 3px;
+    border-radius: 3px;      
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
+   
+  /*estilo do botão submit */
+  input[type="submit"]{
+    width: 100%!important;
+    cursor: pointer;  
+    background: #e50914;
+    padding: 8px 5px;
+    color: #fff;
+    font-size: 20px;  
+    border: 1px solid #fff;   
+    margin-bottom: 10px;  
+    text-shadow: 0 1px 1px #333;   
+    -webkit-border-radius: 5px;
+    border-radius: 5px;   
+    transition: all 0.2s linear;
+  }
+   
+  /*estilo do botão cadastrar */
+  input[type="submit"]:hover{
+    background: #4b0606;
+  }
+
+
+#cadastro,
+ 
+
+/************Caixa Modall*******/
+#login{  
+    display: grid;
+  position: absolute;
+  top: 0px;
+  width: 100%;   
+  height: 100%;
+  padding: 25px 0,2% 30px 6%;   
+  text-align: center;
+  align-items: center;
+  background: #dad3d3;
+  border: 1px solid rgba(147, 184, 189,0.8);    
+  border-radius: 5px;   
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both; 
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  z-index: 5;
+  
+}
+
+#paracadastro:target ~ .content #cadastro,
+#paralogin:target ~ .content #login{
+ 
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft; 
+  -webkit-animation-delay: .1s;
+  animation-delay: .1s;
+}
+ 
+/* Efeito ao clicar no botão ( Cadastre-se ) */
+#registro:target ~ .content #login,
+#paralogin:target ~ .content #cadastro{
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+
+
+
+
+
+/************* Codigo Responsivo **************/
+
+@media only screen and (max-width:360px) { 
+
+   .botao-lingua{  
+        height: 15%;   
+        width: 39%;
+    }
+
+    .botao-entrar{
+        height: 15%;
+        width: 24%;
+        right: 10px ;        
+        text-align: center;
+    }
+    
+    .logo img{
+        max-width: 80px;
+    }
+
+    .mid{
+        width: 100%;
+    }
+
+    .mid-container{
+        max-width: 100%;
+        float: none;
+    }
+
+    .mid-cont-interno{    
+        /*display: none;*/   
+        margin: 0;         
+        width: 90%;
+        height: auto;
+        font-size: 5vw;
+        margin-right: 100px;  
+    }
+
+    .mid-cont{    
+        /*display: none;*/ 
+        margin-left: 125px;           
+        width: 50%;
+        float: none;  
+     }
+
+    .assinatura input[type = "email"]{        
+        width: 100%;
+        float: none;
+        
+    }
+
+    #vamosLa{
+        width: 100%;
+        float: none;
+        padding: 15px 5px;
+    }
+
+    .img-tv{
+        max-width: 100%;
+        height: auto;
+        float: none;
+    }
+
+    .video-tv{
+        display: none;    
+   
+    }
+
+    .section{
+        width: 100%;      
+
+    }
+
+    .section h2{
+        left: 5px;
+    }
+
+    .grid{
+        font-size: 5vw;
+    }
+
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Netflix Brasil - assistir séries online, assistir filmes online</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="shortcut icon" href="./img/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="mid">
+    <div class="mid-container">
+
+      <div class="logo">
+        <span>
+          <img id="logo" src="./img/logo.png">
+        </span>
+
+
+        <button class="botao-entrar">Entrar</button>
+
+
+        <div class="botao-lingua">
+          <img id="globo" src="./img/globo.png">
+          <select>
+            <option>Português</option>
+            <option>Inglês</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="mid-cont">
+        <div class="mid-cont-interno">
+          <h1 class="title-main">Filmes, séries e muito<br /> mais. Sem limites.</h1>
+          <h2>Assista onde quiser. Cancele quando quiser.</h2>
+          <p> Pronto para assistir? Informe seu email para criar ou reiniciar sua assinatura.</p>
+          <div class="assinatura">
+            <form action="">
+              <input type="email" placeholder="Email" />
+              <div id="vamosLa">Vamos lá ></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="gradiente"></div>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid">
+          <div>
+            <h1>Aproveite na TV.</h1>
+            <p>
+              Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple
+              TV,
+              aparelhos de Blu-ray e outros dispositivos.
+            </p>
+          </div>
+          <div class="img-tv">
+            <img src="img/tv.png" alt="TV">
+            <video class="video-tv" autoplay playinline muted loop>
+              <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v">
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="modal-entrar" class="modal-container">
+      <div class="modal">
+        <div class="sel-modal">
+          <div class="texto-modal">
+            <p>SELECIONE UMA OPÇÃO</p>
+          </div>
+          <button class="fechar">x</button>
+          <div class="botao-modal">
+            <div class="cadastro">Cadastro</div>
+            <div class="login">Login</div>
+            <div class="busca">Busca</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-cadastrar" class="modal2-container">
+      <div class="modal" id="myModal2">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div id="cadastro">
+              <form method="post" action="">
+                <h1>Cadastro</h1>
+                <p>
+                  <label for="nome_cad">Seu nome</label>
+                  <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome" />
+                </p>
+                <p>
+                  <label for="email_cad">Seu e-mail</label>
+                  <input id="email_cad" name="email_cad" required="required" type="email"
+                    placeholder="ex.nome@algumacoisa.com" />
+                </p>
+                <p>
+                  <label for="senha_cad">Sua senha</label>
+                  <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234" />
+               </p>
+                <p>
+                  <input type="submit" value="Cadastrar" />
+                </p> </form>
+            </div>
+            <button class="fechar">x</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modal-login" class="modal3-container">
+      <div class="modal" id="myModal3">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div id="login">
+              <form method="post" action="">
+                <h1>Login</h1>
+                <p>
+                  <label for="nome_login">Seu Nome</label>
+                  <input id="nome_login" name="nome_login" required="required" type="text"
+                    placeholder="ex.nome@algumacoisa.com" />
+                </p>
+                <p>
+                  <label for="email_login">Seu trabalho</label>
+                  <input id="email_login" name="email_login" required="required" type="text"
+                    placeholder="ex. padeiro" />
+                </p>
+                <p>
+                  <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
+                  <label for="manterlogado">Manter-me logado</label>
+                </p>
+                <p>
+                  <input type="submit" value="Logar" />
+                </p>
+              </form>
+            </div>
+            <button class="fechar">x</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-busca" class="modal4-container">
+      <div class="modal" id="myModal4">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div id="busca">
+              <div id = "buscar" class= "busca">API</div>
+              
+            </div>
+            <button class="fechar">x</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelector('button').addEventListener('click', function(){
+        axios.get('https://api.chucknorris.io/jokes/random').then(function(alo){
+          console.log(alo.data);
+           document.getElementById("buscar").innerHTML= alo.data.value;
+           var img = document.createElement('img');
+            img.src = alo.data.icon_url;
+            document.getElementById("buscar").appendChild(img);
+           var frase = document.createElement("p");
+        });
+
+      })
+
+
+    </script>
+    <script src="./js/script.js"></script>
+
+    
+
+
+
+</body>
+
+</html>
