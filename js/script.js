@@ -1,5 +1,4 @@
 
-
 /*Modal-Entrar*/
 function iniciaModal(modalID) {
     const modal = document.getElementById(modalID);    
@@ -28,8 +27,8 @@ function iniciaModal(modalID) {
      modal2.addEventListener('click', function (e) {
         if (e.target.id == modal2ID || e.target.className == 'fechar' )
         modal2.classList.remove('mostrar2');
-        var nome = document. getElementById("nome").value;
-        var job = document. getElementById("job").value;
+        var nome = document. getElementById("email").value;
+        var senha = document. getElementById("password").value;
            
  })}
 
@@ -47,15 +46,19 @@ function iniciaModal(modalID) {
  function iniciaModal3(modal3ID){
     const modal3 = document.getElementById(modal3ID);
     /*console.log(modal3);*/
-    modal3.classList.add('mostrar3');
+    modal3.classList.add('mostrar3');    
+
     modal3.addEventListener('click', function (e) {
        if (e.target.id == modal3ID || e.target.className == 'fechar' )
        modal3.classList.remove('mostrar3');   
 })}
 
 const login = document.querySelector('.login');
-login.addEventListener('click', function(){
+
+login.addEventListener('click', function check(){
+   
    iniciaModal3('modal-login');
+   
 } )
 
 /*console.log(button3);*/
@@ -78,12 +81,44 @@ busca.addEventListener('click', function(){
 } )
 
 
-/*Api*/ 
 
-axios.post('https://reqres.in/api/users', {
-    name: 'nome',
-    job: 'job'
-  })
+/*função para LocalStorage*/
+
+function store() {
+   localStorage.setItem('email', nome.value);
+   localStorage.setItem('senha', pw.value);
+}
+
+/*função para validação*/
+
+function check() {
+
+   /* storage cadastro */
+   var storedEmail = localStorage.getItem('email');
+   var storedPw = localStorage.getItem('senha');
+
+   /* storage login */
+   var userEmail = document.getElementById('email').value;
+   var userPw = document.getElementById('senha').value;
+
+   if(userEmail.value == storedEmail && userPw.value == storedPw) {
+      console.log('Você já está logado.');
+   }else {
+      console.log('ERROR.');
+   }
+}
+
+
+
+
+
+
+/* Login */
+  axios.post('https://reqres.in/api/login', {
+   email: "eve.holt@reqres.in",
+   password: "cityslicka"
+})
+
   .then(function (response) {      
     console.log(response);
   })
@@ -91,6 +126,14 @@ axios.post('https://reqres.in/api/users', {
     console.log(error);
   });
 
+  
+
+  
+
+
+
+
+  
 
 
 
