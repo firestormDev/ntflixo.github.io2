@@ -19,7 +19,7 @@ function isLogado(){
    else{
       console.log("Você não está logado!");
       document.getElementById("loginButton").style.display = "block";
-      document.getElementById("cadastroButton").style.display = "block";
+      //document.getElementById("cadastroButton").style.display = "block";
       document.getElementById("sairButton").style.display = "none";
       buttonEntrar.style.display = "block";
       return false;
@@ -54,12 +54,12 @@ function iniciaModal(modalID) {
  })
 
 
- /*Modal-Cadastro*/
+ /*Modal-Cadastro
  
 
  function iniciaModal2(modal2ID){
      const modal2 = document.getElementById(modal2ID);
-     /*console.log(modal2);*/
+     /*console.log(modal2);
      modal2.classList.add('mostrar2');
      modal2.addEventListener('click', function (e) {
         if (e.target.id == modal2ID || e.target.className == 'fechar' )
@@ -71,11 +71,13 @@ function iniciaModal(modalID) {
  cadastro.addEventListener('click', function(){
     iniciaModal2('modal-cadastrar');
    }
-);
+);*/
 
 document.getElementById("loginButton2").addEventListener('click', function(){
    logar()
 });
+
+
 
 
 function logar(){
