@@ -9,8 +9,7 @@ function isLogado(){
 
    if(token === "QpwL5tke4Pnpja7X4"){
       console.log("Você já está logado!")
-      document.getElementById("loginButton").style.display = "none";
-      document.getElementById("cadastroButton").style.display = "none";
+      document.getElementById("loginButton").style.display = "none";     
       document.getElementById("sairButton").style.display = "display";
       buttonEntrar.style.display = "none";
       return true;
@@ -18,8 +17,7 @@ function isLogado(){
    }
    else{
       console.log("Você não está logado!");
-      document.getElementById("loginButton").style.display = "block";
-      //document.getElementById("cadastroButton").style.display = "block";
+      document.getElementById("loginButton").style.display = "block";      
       document.getElementById("sairButton").style.display = "none";
       buttonEntrar.style.display = "block";
       return false;
