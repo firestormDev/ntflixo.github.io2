@@ -19,6 +19,7 @@ function isLogado(){
       console.log("Você não está logado!");
       document.getElementById("loginButton").style.display = "block";      
       document.getElementById("sairButton").style.display = "none";
+      document.getElementById("buscarButton").style.display = "none";
       buttonEntrar.style.display = "block";
       return false;
    }
@@ -43,6 +44,11 @@ function iniciaModal(modalID) {
      iniciaModal('modal-entrar');
  })
 
+ buttonBusca = document.getElementById('buscarButton');
+ buttonBusca.addEventListener('click', function () {
+     iniciaModal4('modal-busca');
+   })
+
  buttonSair = document.getElementById('sairButton');
  buttonSair.addEventListener('click', function () {
      deslogar();
@@ -52,24 +58,7 @@ function iniciaModal(modalID) {
  })
 
 
- /*Modal-Cadastro
- 
 
- function iniciaModal2(modal2ID){
-     const modal2 = document.getElementById(modal2ID);
-     /*console.log(modal2);
-     modal2.classList.add('mostrar2');
-     modal2.addEventListener('click', function (e) {
-        if (e.target.id == modal2ID || e.target.className == 'fechar' )
-        modal2.classList.remove('mostrar2');
-           
- })}
-
- const cadastro = document.getElementById('cadastroButton');
- cadastro.addEventListener('click', function(){
-    iniciaModal2('modal-cadastrar');
-   }
-);*/
 
 document.getElementById("loginButton2").addEventListener('click', function(){
    logar()
