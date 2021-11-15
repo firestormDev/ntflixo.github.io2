@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+<!--  header     -->
   <div class="mid">
     <div class="mid-container">
 
@@ -24,8 +24,9 @@
         </span>
 
 
-        <button class="botao-entrar">Entrar</button>
+        <button class="botao" id="entrarButton">Entrar</button>
 
+        <button class="botao" id="sairButton">Sair</button>
 
         <div class="botao-lingua">
           <img id="globo" src="./img/globo.png">
@@ -36,7 +37,7 @@
         </div>
       </div>
 
-
+<!--  main     -->
       <div class="mid-cont">
         <div class="mid-cont-interno">
           <h1 class="title-main">Filmes, séries e muito<br /> mais. Sem limites.</h1>
@@ -51,7 +52,7 @@
         </div>
       </div>
     </div>
-
+<!-- footer       -->
     <div id="gradiente"></div>
 
     <section class="section">
@@ -74,7 +75,7 @@
         </div>
       </div>
     </section>
-
+<!--   modal    -->
     <div id="modal-entrar" class="modal-container">
       <div class="modal">
         <div class="sel-modal">
@@ -83,14 +84,14 @@
           </div>
           <button class="fechar">x</button>
           <div class="botao-modal">
-            <div class="cadastro">Cadastro</div>
-            <div class="login">Login</div>
-            <div class="busca">Busca</div>
+            <!--<div class="button" type="button" id="cadastroButton">Cadastro</div> !-->
+            <div class="button" type="button" id="loginButton">Login</div>
+            <div class="button" type="button" id="buscaButton">Busca</div>
           </div>
         </div>
       </div>
     </div>
-
+<!--  Cadastro     -->
     <div id="modal-cadastrar" class="modal2-container">
       <div class="modal" id="myModal2">
         <div class="modal-dialog">
@@ -108,7 +109,7 @@
                   <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234" />
                </p>
                 <p>
-                  <input type="submit" value="Cadastrar" />
+                  <input id="cadastroButton" class="button" type="submit" value="Cadastrar" />
                 </p> </form>
             </div>
             <button class="fechar">x</button>
@@ -116,6 +117,7 @@
         </div>
       </div>
     </div>
+<!--  login     -->   
     <div id="modal-login" class="modal3-container">
       <div class="modal" id="myModal3">
         <div class="modal-dialog">
@@ -138,8 +140,12 @@
                   <label for="manterlogado">Manter-me logado</label>
                 </p>
                 <p>
-                  <input type="submit" value="Logar" />
+                  <input id="loginButton2" class="button" type="button" value="o" />
                 </p>
+
+                <!-- <p id="erro1">Credenciais incorretas!</p>
+                <p id="erro2">O email deve ter mais de 3 carateres!</p> -->
+                
               </form>
             </div>
             <button class="fechar">x</button>
@@ -148,12 +154,13 @@
       </div>
     </div>
 
+    <!--  API json aberta     -->
     <div id="modal-busca" class="modal4-container">
       <div class="modal" id="myModal4">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div id="busca">
-              <div id = "buscar" class= "busca">API</div>
+            <div id="busca" class="busca">
+              <div id="buscar">API</div>
               
             </div>
             <button class="fechar">x</button>
